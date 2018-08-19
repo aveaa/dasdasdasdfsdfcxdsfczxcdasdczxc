@@ -105,25 +105,7 @@ if (message.content.startsWith(prefix + "time")) {
 
    message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec` + "`");
 
-        client.on('message', message => {
-          var prefix = '%';
-          if (message.content.startsWith(prefix + 'قوانين')) {
-      let embed = new Discord.RichEmbed()
-      .setFooter(`@everyone`)
-      .setFooter(`**ممنوع عمل سبام**`)
-      .setFooter(`**عدم نشر روابط سيرفرات دسكورد اخرى**`)
-      .setFooter(`**ممنوع طلب رتبه **`)
-      .setFooter(`**احترام الاخرين**`)
-      .setFooter(`**عدم ازعاج ومضايقة الاخرين**`)
-      .setFooter(`**يمنع منعا باتاً استخدام كوماندات البوت بالشات العام**`)
-      .setFooter(**القوانين غير ثابته**`)
-      .setColor('RANDOM')
-      message.channel.send(embed)
-      }
-  });
-  
-}
-});
+
 
 client.on('message', message => {
   if (message.content.startsWith("%صوره")) {
@@ -161,7 +143,7 @@ message.channel.sendEmbed(embed);
       let embed = new Discord.RichEmbed()
       .addField('شي جديد' ,'الامر الجديد الي رح ينضاف لما تكتب الامر مع الاسم رح يطلعلك سكن الشخص في لعبه ماين كرافت')
       .setColor('RANDOM')
-      .setTitle('**:envelope_with_arrow:هنا بكون موجود الشي الجديد الي رح ينضاف في البوت قبل نزوله:envelope_with_arrow:**')
+      .setTitle('**:envelope_with_arrow:هنا بكون موجود الاوامر الجديده الي انضافة في البوت:envelope_with_arrow:**')
       message.channel.send(embed)
       }
   });
