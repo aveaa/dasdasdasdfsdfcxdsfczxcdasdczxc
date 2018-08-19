@@ -16,6 +16,18 @@ client.on("ready", async  => {
     }, 10000);
   });
 
+client.on("ready", async  => {
+  setInterval(function(){
+  client.channels.find('id', '478846284065931264').setName("「");
+  client.channels.find('id', '478846284065931264').setName("「 O");
+  client.channels.find('id', '478846284065931264').setName("「 O W");
+  client.channels.find('id', '478846284065931264').setName("「 O W N");
+  client.channels.find('id', '478846284065931264').setName("「 O W N E ");
+  client.channels.find('id', '478846284065931264').setName("「 O W N E R");
+  client.channels.find('id', '478846284065931264').setName("「 O W N E R 」");
+    }, 10000);
+  });
+
 client.on('message', message => {
     if (message.content.startsWith("%tg")) {
       
