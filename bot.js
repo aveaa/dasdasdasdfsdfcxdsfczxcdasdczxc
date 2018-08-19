@@ -7,14 +7,13 @@ client.on('ready', () => {
 
 client.on("ready", async  => {
   setInterval(function(){
-  client.channels.find('id', '480868950826287130').setName("W");
-  client.channels.find('id', '480868950826287130').setName("We");
-  client.channels.find('id', '480868950826287130').setName("Wel");
-  client.channels.find('id', '480868950826287130').setName("Welc");
-  client.channels.find('id', '480868950826287130').setName("Welco");
-  client.channels.find('id', '480868950826287130').setName("Welcom");
-  client.channels.find('id', '480868950826287130').setName("Welcome");
-    }, 6000);
+  client.channels.find('id', '474895186770788366').setName("P");
+  client.channels.find('id', '474895186770788366').setName("pu");
+  client.channels.find('id', '474895186770788366').setName("pub");
+  client.channels.find('id', '474895186770788366').setName("publ");
+  client.channels.find('id', '474895186770788366').setName("publi");
+  client.channels.find('id', '474895186770788366').setName("public");
+    }, 10000);
   });
 
 client.on('message', message => {
