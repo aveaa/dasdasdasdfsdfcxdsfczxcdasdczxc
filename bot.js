@@ -682,7 +682,7 @@ var mentionned = message.mentions.members.first();
     
 
          
-     });
+     };
 
 
 
