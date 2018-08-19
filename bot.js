@@ -48,6 +48,44 @@ client.on('ready', () => {
       }
   });
 
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'الاداره')) {
+            if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`لا يوجد لديك صلاحيه`)
+      let embed = new Discord.RichEmbed()
+      .addField('%ban' ,':hammer:طرد شخص من السيرفر مؤبد:hammer: ')
+      .addField('%kick' ,':hammer_pick:اعطاء لشخص كيك:hammer_pick: ')
+      .addField('%cv' ,':microphone:انشاء روم صوتي:microphone:')
+      .addField('%ct' ,':page_facing_up:انشاء شات كتابي:page_facing_up:')
+      .addField('%delet' ,':wastebasket:مسح الشات ومسح الروم الصوتي:wastebasket:')
+      .addField('%mute' ,':zipper_mouth:لعمل ميوت لشخص يجيب عليك عمل رتبت Muted :zipper_mouth:')
+      .addField('%unmute' ,':grinning:يتم فك الميوت عن الشخص يجيب عليك منشنته:grinning:')
+      .addField('welcome' ,':wave:حتى البوت يرحب في الاشخاص يجيب عليك عمل شات باسمwelcome:wave:')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
+
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'العامه')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%دعوه' ,'يتم ارسال رساله لك في الخاص ويوجد بها رابط البوت')
+      .addField('%server' ,'يعطيك معلومات السيرفر')
+      .addField('%support' ,'رابط سيرفر الدعم الفني ')
+      .addField('%ping' ,'يعطيك كم سرعة البنق')
+      .addField('%جديد' ,'هذا الامر يعطيك الاشياء الجديد الي رح تنضاف الي البوت قبل ما تنضاف')
+      .addField('%tg' ,'يترجم لك الى 40 لغه تريدها')
+      .addField('%id' ,'يعطيك معلومات حسابك وقت عملك للحسب وقت دخولك للسيرفر وكم شخص جبت للسيرفر')
+      .addField('%color' ,'هذا الامر يضفلك 138 لون')
+      .addField('%صوره' ,'يعطيك صورت الشخص الي منشنتو')
+      .addField('%report' ,'عمل ابلاغ على شخص ويجيب عمل شات في اسم{report}')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
 
 
 
