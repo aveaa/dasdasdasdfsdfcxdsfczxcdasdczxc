@@ -5,7 +5,17 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
+client.on("ready", async  => {
+  setInterval(function(){
+  client.channels.find('id', '480868950826287130').setName("W");
+  client.channels.find('id', '480868950826287130').setName("We");
+  client.channels.find('id', '480868950826287130').setName("Wel");
+  client.channels.find('id', '480868950826287130').setName("Welc");
+  client.channels.find('id', '480868950826287130').setName("Welco");
+  client.channels.find('id', '480868950826287130').setName("Welcom");
+  client.channels.find('id', '480868950826287130').setName("Welcome");
+    }, 6000);
+  });
 
 client.on('message', message => {
     if (message.content.startsWith("%tg")) {
