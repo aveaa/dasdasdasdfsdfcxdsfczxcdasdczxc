@@ -97,7 +97,23 @@ if (message.content.startsWith(prefix + "time")) {
 
    message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec` + "`");
 
-
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'قوانين')) {
+      let embed = new Discord.RichEmbed()
+      .setFooter(`@everyone`)
+      .setFooter(`**ممنوع عمل سبام**`)
+      .setFooter(`**عدم نشر روابط سيرفرات دسكورد اخرى**`)
+      .setFooter(`**ممنوع طلب رتبه **`)
+      .setFooter(`**احترام الاخرين**`)
+      .setFooter(`**عدم ازعاج ومضايقة الاخرين**`)
+      .setFooter(`**يمنع منعا باتاً استخدام كوماندات البوت بالشات العام**`)
+      .setFooter(**القوانين غير ثابته**`)
+      .setColor('RANDOM')
+      message.channel.send(embed)
+      }
+  });
+  
 }
 });
 
