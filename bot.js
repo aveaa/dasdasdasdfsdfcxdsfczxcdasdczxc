@@ -163,16 +163,7 @@ message.channel.sendEmbed(embed);
       }
   });
 
-        client.on('message', message => {
-          var prefix = '%';
-          if (message.content.startsWith(prefix + 'جديد')) {
-      let embed = new Discord.RichEmbed()
-      .addField('شي جديد' ,'الامر الجديد الي رح ينضاف لما تكتب الامر مع الاسم رح يطلعلك سكن الشخص في لعبه ماين كرافت')
-      .setColor('RANDOM')
-      .setTitle('**:envelope_with_arrow:هنا بكون موجود الشي الجديد الي رح ينضاف في البوت قبل نزوله:envelope_with_arrow:**')
-      message.channel.send(embed)
-      }
-  });
+
 
         client.on('ready', function(){
           var ms = 10000 ;
@@ -676,42 +667,6 @@ var mentionned = message.mentions.members.first();
 
          
      });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
