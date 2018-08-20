@@ -28,6 +28,26 @@ client.on("ready", async  => {
     }, 10000);
   });
 
+client.on("ready", async  => {
+  setInterval(function(){
+  client.channels.find('id', '462292107437277206').setName("⫷");
+  client.channels.find('id', '462292107437277206').setName("⫷༺");
+  client.channels.find('id', '462292107437277206').setName("⫷༺R");
+  client.channels.find('id', '462292107437277206').setName("⫷༺Re");
+  client.channels.find('id', '462292107437277206').setName("⫷༺Rec ");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecY");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYo");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYou");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYout");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYoutu");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYoutub");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYoutube");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYoutube༺");
+  client.channels.find('id', '462292107437277206').setName("⫷༺RecYoutube༺⫸");
+
+    }, 10000);
+  });
+
 client.on('message', message => {
     if (message.content.startsWith("%tg")) {
       
