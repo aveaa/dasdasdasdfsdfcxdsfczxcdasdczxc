@@ -292,7 +292,7 @@ message.channel.sendEmbed(embed);
       .addField('%id' ,'يعطيك معلومات حسابك وقت عملك للحسب وقت دخولك للسيرفر وكم شخص جبت للسيرفر')
       .addField('%color' ,'هذا الامر يضفلك 138 لون')
       .addField('%صوره' ,'يعطيك صورت الشخص الي منشنتو')
-      .addField('%report' ,'عمل ابلاغ على شخص ويجيب عمل شات في اسم{report}')
+      .addField('%report' ,'عمل ابلاغ على شخص ويجب عمل شات في اسم{reports}')
       .setColor('RANDOM')
       .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
       message.channel.send(embed)
