@@ -48,6 +48,16 @@ client.on("ready", async  => {
     }, 10000);
   });
 
+client.on("ready", async  => {
+  setInterval(function(){
+  client.channels.find('id', '462290761195716618').setName("♨");
+  client.channels.find('id', '462290761195716618').setName("♨ع");
+  client.channels.find('id', '462290761195716618').setName("♨عا");
+  client.channels.find('id', '462290761195716618').setName("♨عام");
+  client.channels.find('id', '462290761195716618').setName("♨عام♨");
+    }, 10000);
+  });
+
 client.on('message', message => {
     if (message.content.startsWith("%tg")) {
       
