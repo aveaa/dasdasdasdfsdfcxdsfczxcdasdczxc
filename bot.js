@@ -199,6 +199,7 @@ message.channel.sendEmbed(embed);
           if (message.content.startsWith(prefix + 'جديد')) {
       let embed = new Discord.RichEmbed()
       .addField('شي جديد' ,'الامر الجديد الي رح ينضاف لما تكتب الامر مع الاسم رح يطلعلك سكن الشخص في لعبه ماين كرافت')
+      .addField('لعبه X-O' ,'نفس اللعبه الي في الحقيقه بتقدر تلعبها مع صاحبك امر اللعبه هو %tic')
       .setColor('RANDOM')
       .setTitle('**:envelope_with_arrow:هنا بكون موجود الاوامر الجديده الي انضافة في البوت:envelope_with_arrow:**')
       message.channel.send(embed)
@@ -343,6 +344,7 @@ message.channel.send({embed:embed});
       .addField('%مريم' ,'لعبة مريم')
       .addField('%صراحه' ,'لعبة الصراحه')
       .addField('%خواطر' ,'لعبة خواطر')
+      .addField('%tic' ,'هذا اللعبه نفسها في الحقيقه وهي لعبه X-O')
       .addField('%اسئلني' ,'لعبه اسئلني يعطيك سؤال يجيب عليك الجواب عليه خلال دقيقه')
       .setColor('RANDOM')
       .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
