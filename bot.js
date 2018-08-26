@@ -32,6 +32,18 @@ client.on("ready", async  => {
 
 client.on("ready", async  => {
   setInterval(function(){
+  client.channels.find('id', '433623771904081922').setName("G");
+  client.channels.find('id', '433623771904081922').setName("Ge");
+  client.channels.find('id', '433623771904081922').setName("Gen");
+  client.channels.find('id', '433623771904081922').setName("Gene");
+  client.channels.find('id', '433623771904081922').setName("Gener");
+  client.channels.find('id', '433623771904081922').setName("Genera");
+  client.channels.find('id', '433623771904081922').setName("General");
+    }, 10000);
+  });
+
+client.on("ready", async  => {
+  setInterval(function(){
   client.channels.find('id', '478846284065931264').setName("「");
   client.channels.find('id', '478846284065931264').setName("「 O");
   client.channels.find('id', '478846284065931264').setName("「 O W");
