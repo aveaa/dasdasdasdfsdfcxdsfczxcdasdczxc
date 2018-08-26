@@ -15,7 +15,7 @@ client.on('message', async msg => {
   msg.channel.startTyping();
   const searchMessage = await msg.channel.send('🖌️Painting...');
   const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
-  msg.channel.send({file: { attachment:body.message, name: 'changemymind.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
+  msg.channel.send({file: { attachment:body.message, name: 'EISbot.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
 };
 });
 
