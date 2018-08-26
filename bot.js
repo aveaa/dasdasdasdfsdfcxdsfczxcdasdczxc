@@ -5,18 +5,21 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', async msg => {
-     client.snek = require('snekfetch');
-    var p = "%"
-  if(msg.content.startsWith(p + "test")) {
-   let args = msg.content.split(' ').slice(1).join(' ');
+  client.on('message', message => { 
+    var prefix = "%";
+ let args = message.content.split(' ').slice(1);
+    if(message.content.startsWith(prefix + 'https')) {
+    if(!message.channel.guild) return;  
 
- if(args.length < 1) return args.missing(msg, 'No text added', this.help);
-  msg.channel.startTyping();
-  const searchMessage = await msg.channel.send('🖌️Painting...');
-  const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
-  msg.channel.send({file: { attachment:body.message, name: 'EISbot.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
-};
+        googl.setKey('AIzaSyC2Z2mZ_nZTcSvh3QvIyrmOIFP6Ra6co6w');
+        googl.getKey();
+        googl.shorten(args.join(' ')).then(shorturl => {
+            message.channel.send(''+shorturl)
+        }).catch(e=>{
+            console.log(e.message);
+            message.channel.send('خطأ!');
+        });
+}
 });
 
 client.on("ready", async  => {
