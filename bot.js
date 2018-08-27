@@ -25,9 +25,8 @@ client.on('ready', () => {
 
 
    const cuttweet = [
-    '‏http://cutt.us/BbVSu',
-    '‏http://cutt.us/b3WJ0 ',
-    '‏http://cutt.us/08mFl',
+    '‏http://cutt.us/BbVSu | ',
+
 
   ]
   
