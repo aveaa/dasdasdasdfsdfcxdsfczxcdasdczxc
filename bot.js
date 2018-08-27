@@ -5,7 +5,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-  client.on('message' , message => {
+ 
 
  client.on('message' , message => {
   var prefix = "%";
