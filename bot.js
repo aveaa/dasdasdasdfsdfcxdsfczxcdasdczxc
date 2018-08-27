@@ -25,9 +25,9 @@ client.on('ready', () => {
 
 
    const cuttweet = [
-    '‏حساب ثاني  | مطلبك الوحيد الحين ',
-    '‏حساب الاول  | مطلبك الوحيد الحين ',
-    '‏حساب تجريبي  | مطلبك الوحيد الحين ',
+    '‏http://cutt.us/BbVSu',
+    '‏http://cutt.us/b3WJ0 ',
+    '‏http://cutt.us/08mFl',
 
   ]
   
