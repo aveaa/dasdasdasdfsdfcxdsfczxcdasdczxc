@@ -25,21 +25,21 @@ client.on('ready', () => {
 
 
    const cuttweet = [
-    '‏http://cutt.us/BbVSu',
-    '‏http://cutt.us/b3WJ0',
-    '‏http://cutt.us/08mFl',
-    '‏http://cutt.us/815DN',
-    '‏http://cutt.us/M2qnv',
-    '‏http://cutt.us/2MFzK',
-    '‏http://cutt.us/jLgy6',
-    '‏http://cutt.us/xZ8W8',
-    '‏http://cutt.us/8G7p7',
-    '‏http://cutt.us/M8TRS',
-    '‏http://cutt.us/eQF6C',
-    '‏http://cutt.us/s2tFR',
-    '‏http://cutt.us/HuRzb',
-    '‏http://cutt.us/4YwoN',
-    '‏http://cutt.us/7Wics',
+    'http://cutt.us/BbVSu',
+    'http://cutt.us/b3WJ0',
+    'http://cutt.us/08mFl',
+    'http://cutt.us/815DN',
+    'http://cutt.us/M2qnv',
+    'http://cutt.us/2MFzK',
+    'http://cutt.us/jLgy6',
+    'http://cutt.us/xZ8W8',
+    'http://cutt.us/8G7p7',
+    'http://cutt.us/M8TRS',
+    'http://cutt.us/eQF6C',
+    'http://cutt.us/s2tFR',
+    'http://cutt.us/HuRzb',
+    'http://cutt.us/4YwoN',
+    'http://cutt.us/7Wics',
 
 
 
@@ -53,6 +53,7 @@ client.on('ready', () => {
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setThumbnail(message.author.avatarURL) 
+    .addField('TEST',
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
   message.author.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
