@@ -33,13 +33,14 @@ client.on('ready', () => {
   
   client.on('message', message => {
   if (message.content.startsWith("%Test")) {
+	   message.reply(`تم ارساله الرابط في الخاص`)
                if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setThumbnail(message.author.avatarURL) 
   .addField('TEST',
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
-  message.channel.sendEmbed(embed);
+  message.author.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
    }
   });
