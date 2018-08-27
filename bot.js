@@ -53,7 +53,7 @@ client.on('ready', () => {
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setThumbnail(message.author.avatarURL) 
-    .addField('TEST',
+    .addField('Spotify حساب',
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
   message.author.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
