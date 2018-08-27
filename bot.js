@@ -24,7 +24,23 @@ client.on('ready', () => {
 
 
 
-
+   
+    '‏حساب ثاني  | مطلبك الوحيد الحين ؟',
+    '‏حسابك هو | test',
+  ]
+  
+  client.on('message', message => {
+  if (message.content.startsWith("%Test")) {
+               if(!message.channel.guild) return message.reply('** This command only for servers**');
+  var embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setThumbnail(message.author.avatarURL) 
+  .addField('TEST',
+  `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
+  message.channel.sendEmbed(embed);
+  console.log('[id] Send By: ' + message.author.username)
+   }
+  });
 
 
 
