@@ -5,6 +5,19 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on('message', message => {	
+    if (message.author.bot) return;
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith(prefix + '%adminsbc')){
+ if(!message.author.id === '292042690470739968') return;
+message.channel.sendMessage('جار ارسال الرسالة |✅')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
  const devs = ['292042690470739968' , '310129588397277185' , '' , ''];
 const adminprefix = "%";
 client.on('message', message => {
