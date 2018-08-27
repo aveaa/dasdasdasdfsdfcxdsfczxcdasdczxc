@@ -32,8 +32,8 @@ client.on('ready', () => {
   ]
   
   client.on('message', message => {
-  if (message.content.startsWith("%Test")) {
-	   message.reply(`تم ارساله الرابط في الخاص`)
+  if (message.content.startsWith("%gen")) {
+	   message.reply(`تم ارساله الحساب في الخاص`)
                if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
