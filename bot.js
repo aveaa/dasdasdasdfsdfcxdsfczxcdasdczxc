@@ -76,17 +76,8 @@ client.on('message', message => {
     'http://cutt.us/7Wics',
 
 
-    let cool = new Set();
-
-    if(cool.has(message.author.id)) return;
-    cool.add(message.author.id);
-    setTimeout(() => {
-    cool.delete(message.author.id);
-    }, 5000);
 
 
-
-    
   ]
   
   client.on('message', message => {
@@ -100,6 +91,13 @@ client.on('message', message => {
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
   message.author.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
+  let cool = new Set();
+
+if(cool.has(message.author.id)) return;
+cool.add(message.author.id);
+setTimeout(() => {
+cool.delete(message.author.id);
+}, 5000);
    }
   });
 
