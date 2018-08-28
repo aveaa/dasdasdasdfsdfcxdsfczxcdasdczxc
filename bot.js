@@ -97,7 +97,7 @@ if(cool.has(message.author.id)) return;
 cool.add(message.author.id);
 setTimeout(() => {
 cool.delete(message.author.id);
-}, 5000);
+}, 300000);
    }
   });
 
