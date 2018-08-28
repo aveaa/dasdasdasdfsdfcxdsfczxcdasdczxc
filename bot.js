@@ -17,7 +17,18 @@ m.sendMessage(args)
 }
 });
 
-
+client.on('message', msg => { 
+  if (msg.content.startsWith(`%اقتراح`)) {
+     let args = msg.content.split(" ").slice(1);
+    if (!args[1]) return msg.reply(`يجب كتابه الاقتراح`) 
+    if (msg.guild.channels.find('name', 'الاقتراحات')) {
+      msg.guild.channels.find('name', 'الاقتراحات').send(`
+    الاقتراح من : ${msg.member}
+    الاقتراح : **${args.join(" ").split(msg.mentions.members.first()).slice(' ')}**
+    `)
+    }
+  }
+  })
 
  const devs = ['292042690470739968' , '310129588397277185' , '' , ''];
 const adminprefix = "%";
