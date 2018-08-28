@@ -58,7 +58,7 @@ client.on('message', message => {
 
 
 
-   const cuttweet = [
+    const cuttweet = [
     'http://cutt.us/BbVSu',
     'http://cutt.us/b3WJ0',
     'http://cutt.us/08mFl',
@@ -78,28 +78,23 @@ client.on('message', message => {
 
 
 
+
   ]
   
   client.on('message', message => {
   if (message.content.startsWith("%gen")) {
-	   message.reply(`تم ارساله الحساب في الخاص`)
+    	   message.reply(`تم ارساله الحساب في الخاص`)
                if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setThumbnail(message.author.avatarURL) 
-    .addField('Spotify حساب',
+  .addField('Spotify حساب',
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
-  message.author.sendEmbed(embed);
+  message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
-  let cool = new Set();
-
-if(cool.has(message.author.id)) return;
-cool.add(message.author.id);
-setTimeout(() => {
-cool.delete(message.author.id);
-}, 300000);
    }
   });
+
 
 
 
