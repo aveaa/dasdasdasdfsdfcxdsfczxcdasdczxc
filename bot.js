@@ -245,7 +245,7 @@ var mentionned = message.mentions.members.first();
   
  
 
-  
+ 
   
   
 client.login(process.env.BOT_TOKEN);
