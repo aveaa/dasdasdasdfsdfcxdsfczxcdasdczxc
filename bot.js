@@ -70,7 +70,7 @@ client.on('message', message => {
   
   client.on('message', message => {
   if (message.content.startsWith("%gen")) {
-if(cool.has(message.author.id)) return;
+if(cool.has(message.author.id))  return messege.reply ("يجب انتظار 5 دقائق لاستعمال هذا الامر مرة اخرى" )
 cool.add(message.author.id);
 setTimeout(() => {
 cool.delete(message.author.id);
