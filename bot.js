@@ -58,30 +58,23 @@ client.on('message', message => {
 
 
 
-   const cuttweet = [
-    'http://cutt.us/BbVSu',
-    'http://cutt.us/b3WJ0',
-    'http://cutt.us/08mFl',
-    'http://cutt.us/815DN',
-    'http://cutt.us/M2qnv',
-    'http://cutt.us/2MFzK',
-    'http://cutt.us/jLgy6',
-    'http://cutt.us/xZ8W8',
-    'http://cutt.us/8G7p7',
-    'http://cutt.us/M8TRS',
-    'http://cutt.us/eQF6C',
-    'http://cutt.us/s2tFR',
-    'http://cutt.us/HuRzb',
-    'http://cutt.us/4YwoN',
-    'http://cutt.us/7Wics',
+ let cool = new Set();
+
+  const cuttweet = [
+ 'http://cutt.us/BbVSu',
 
 
 
-
+    
   ]
   
- client.on('message', message => {
+  client.on('message', message => {
   if (message.content.startsWith("%gen")) {
+if(cool.has(message.author.id)) return;
+cool.add(message.author.id);
+setTimeout(() => {
+cool.delete(message.author.id);
+}, 300000);
        message.reply(`تم ارساله الحساب في الخاص`)
                if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
@@ -93,7 +86,6 @@ client.on('message', message => {
   console.log('[id] Send By: ' + message.author.username)
    }
   });
-
 
 
   
