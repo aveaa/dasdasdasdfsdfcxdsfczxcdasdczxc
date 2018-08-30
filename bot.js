@@ -17,6 +17,97 @@ m.sendMessage(args)
 }
 });
 
+
+  ﻿client.on("guildMemberAdd", member => {
+    member.createDM().then(function (channel) {
+    return channel.send(`منور السيرفر يا بعد قلبي ${member} `) 
+  }).catch(console.error)
+  })
+
+
+
+
+client.on("guildMemberAdd", member => {
+let welcomer = member.guild.channels.find("name","welcome");
+      if(!welcomer) return;
+      if(welcomer) {
+         moment.locale('ar-ly');
+         var h = member.user;
+        let norelden = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(h.avatarURL)
+        .setAuthor(h.username,h.avatarURL)
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+     welcomer.send({embed:norelden});          
+               
+ 
+      }
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    client.on('guildMemberAdd', member => {
+      var embed = new Discord.RichEmbed()
+      .setAuthor(member.user.username, member.user.avatarURL)
+      .setThumbnail(member.user.avatarURL)
+      .setTitle(`عضو جديد`)
+      .setDescription(`اهلا بك في السيرفر`)
+      .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
+      .setColor('GREEN')
+  
+  var channel =member.guild.channels.find('name', 'welcome')
+  if (!channel) return;
+  channel.send({embed : embed});
+  });
+
+
+
+
+
+
+
+
+  client.on('message', msg => {
+    var prefix = "%"
+  if(msg.content.startsWith (prefix  + 'server')) {
+  let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setThumbnail(msg.guild.iconURL)
+  .setTitle(`Showing Details Of  **${msg.guild.name}**`)
+  .addField(':globe_with_meridians: نوع السيرفر', `[** ${msg.guild.region}**]`,true)
+  .addField(':medal: الرتب',`[** __${msg.guild.roles.size}__ **]`,true)
+  .addField(':red_circle: عدد الاعضاء',`[** __${msg.guild.memberCount}__ **]`,true)
+  .addField(':large_blue_circle: عدد الاعضاء الاونلاين',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+  .addField(':pencil: الرومات الكتابية',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+  .addField(':microphone: رومات الصوت',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+  .addField(':crown: الأونـر',`**${msg.guild.owner}**`,true)
+  .addField(':id: ايدي السيرفر',`**${msg.guild.id}**`,true)
+  .addField(':date: تم عمل السيرفر في',msg.guild.createdAt.toLocaleString())
+  msg.channel.send(embed);
+  }
+});
+
+
+
+
+
+
+
+
 client.on('message', msg => { 
   if (msg.content.startsWith(`%اقتراح`)) {
      let args = msg.content.split(" ").slice(1);
@@ -416,21 +507,7 @@ if (message.content.startsWith("%rv")) {
 
   
   
-client.on('message', async message => {
-  if(message.content.startsWith(prefix + "اقتراح")) {
-  await  message.channel.send(`اكتب اقتراحك الان`)
-    let filter = m => m.author.id === message.author.id
-      var text = '';
-        let sugsa = message.channel.awaitMessages(filter, { max: 1, time: 60000})
-          .then(co => {
-            text = co.first().content
 
-              message.channel.send(`تم حفظ اقتراحك الرجاء انتضار الرد من قبل الاداره`)
-                client.channels.get("483927457834074113").send(`${message.author.username}'s sug => ${text}`)
-
-              })
-            }
-          })
     
 
 client.on("message", (message) => {
@@ -540,8 +617,8 @@ client.on('message',message =>{
           if (message.content.startsWith(prefix + 'الاداره')) {
             if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`لا يوجد لديك صلاحيه`)
       let embed = new Discord.RichEmbed()
-      .addField('%cv' ,':microphone:انشاء روم صوتي:microphone:')
-      .addField('%ct' ,':page_facing_up:انشاء شات كتابي:page_facing_up:')
+      .addField('%ch' ,':microphone:انشاء روم صوتي:microphone:')
+      .addField('%rv' ,':page_facing_up:انشاء شات كتابي:page_facing_up:')
       .addField('%del' ,':wastebasket:مسح الشات ومسح الروم الصوتي:wastebasket:')
       .addField('%mute' ,':zipper_mouth:لعمل ميوت لشخص يجيب عليك عمل رتبت Muted :zipper_mouth:')
       .addField('%unmute' ,':grinning:يتم فك الميوت عن الشخص يجيب عليك منشنته:grinning:')
