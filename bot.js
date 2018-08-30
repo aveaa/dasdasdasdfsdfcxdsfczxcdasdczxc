@@ -162,6 +162,24 @@ client.on('message', message => {
 
 
 
+
+client.on("message", message => {
+    var prefix = "%"
+    if (!message.content.startsWith(prefix)) return;
+      let command = message.content.split(" ")[0];
+      command = command.slice(prefix.length);
+        if(command === "min") {
+                const args = message.content.split(" ").slice(1).join(" ")
+        if (!args) return message.channel.send("** Type your skin name **");
+        const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
+    message.channel.send(image)
+        }
+    });
+
+
+
+
+
 client.on('message', message => {
     if (message.content.startsWith("%bans")) {
         message.guild.fetchBans()
