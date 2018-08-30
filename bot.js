@@ -204,6 +204,7 @@ message.channel.sendEmbed(embed);
 
 
 client.on('message' , async (message) => {
+	var prefix = "%";
        if(message.content.startsWith(prefix + "clear")) {
            let args = message.content.split(" ").slice(1);
 		   if(!message.member.hasPermission('MANAGE_MESSAGES')) return    message.channel.send('**لا يوجد لديك صلاحية لمسح الشات**');
