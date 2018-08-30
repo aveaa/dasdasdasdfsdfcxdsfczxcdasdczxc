@@ -157,6 +157,34 @@ cool.delete(message.author.id);
 
 
   
+client.on("message", (message) => {
+if (message.content.startsWith("%ch")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" `MANAGE_CHANNELS` لا يوجد لديك صلاحية ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'text');
+message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
+
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 client.on('message', message => {   
@@ -375,7 +403,7 @@ client.on('message' , async (message) => {
 
 
 client.on("message", (message) => {
-if (message.content.startsWith("%cv")) {
+if (message.content.startsWith("%rv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
@@ -405,7 +433,16 @@ client.on('message', async message => {
           })
     
 
+client.on("message", (message) => {
+    if (message.content.startsWith('%del')) {
+        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("`MANAGE_CHANNELS` لا يوجد لديك صلاحية ");
 
+        let args = message.content.split(' ').slice(1);
+        let channel = message.client.channels.find('name', args.join(' '));
+        if (!channel) return message.reply('**لا توجد غرفة مثل هذا الاسم **').catch(console.error);
+        channel.delete()
+    }
+});
 
 
 client.on('message', message => {
@@ -433,6 +470,102 @@ client.on('message', message => {
       message.author.sendEmbed(Embed11)
     }
 });
+
+client.on('message' , async (message) => {
+       if(message.content.startsWith(`<@${client.user.id}>`)) {
+              message.channel.startTyping()
+ let responses = [
+        'كيف يمكن اساعدك',
+		
+        'طول الله في عمري CJ معك الملك',
+	   'تفضل ماذا تريد',
+	   'كيفك',
+	   'يقولك الشاعر الملك يبقى ملك',
+	   
+	   
+    ]
+    
+    // Fetch a random item from the array
+    let fetched = responses[Math.floor(Math.random() * responses.length)];
+   message.reply(fetched)
+   message.channel.stopTyping()
+       }
+  
+});
+
+
+client.on('message',message =>{
+    var prefix = "%";
+    if(message.content.startsWith(prefix + 'topinv')) {
+  message.guild.fetchInvites().then(i =>{
+  var invites = [];
+   
+  i.forEach(inv =>{
+    var [invs,i]=[{},null];
+     
+    if(inv.maxUses){
+        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
+    }else{
+        invs[inv.code] =+ inv.uses;
+    }
+        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
+   
+  });
+  var embed = new Discord.RichEmbed()
+  .setColor("#000000")
+  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
+  .setThumbnail("https://www.egys7.com/wp-content/uploads/2015/10/natural-mirror-71967.jpg")
+           message.channel.send({ embed: embed });
+   
+  });
+   
+    }
+  });
+
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'help')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%العامه' ,'     :earth_americas:  للحصول على قائمة  العامة :earth_americas: ')
+      .addField('%الاداره' ,'     :crown:   للحصول على قائمة  الاداره :crown:  ')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
+
+
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'الاداره')) {
+            if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`لا يوجد لديك صلاحيه`)
+      let embed = new Discord.RichEmbed()
+      .addField('%cv' ,':microphone:انشاء روم صوتي:microphone:')
+      .addField('%ct' ,':page_facing_up:انشاء شات كتابي:page_facing_up:')
+      .addField('%del' ,':wastebasket:مسح الشات ومسح الروم الصوتي:wastebasket:')
+      .addField('%mute' ,':zipper_mouth:لعمل ميوت لشخص يجيب عليك عمل رتبت Muted :zipper_mouth:')
+      .addField('%unmute' ,':grinning:يتم فك الميوت عن الشخص يجيب عليك منشنته:grinning:')
+      .addField('welcome' ,':wave:حتى البوت يرحب في الاشخاص يجيب عليك عمل شات باسمwelcome:wave:')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
