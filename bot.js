@@ -70,6 +70,7 @@ client.on('message', message => {
   
   client.on('message', message => {
   if (message.content.startsWith("%gen")) {
+    message.reply(`يجب عليك الانتظار 5 دقايق حتى تحصل على حساب اخر`) 
 if(cool.has(message.author.id)) return;
 cool.add(message.author.id);
 setTimeout(() => {
@@ -89,7 +90,157 @@ cool.delete(message.author.id);
 
 
   
+
+
+client.on('message', message => {   
+    if (message.author.boss) return;
+    var prefix = "%";
+    if (!message.content.startsWith(prefix)) return;
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+    let args = message.content.split(" ").slice(1);
+    if (command == "mute") {
+    if (!message.channel.guild) return;
+    if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انت لا تملك صلاحيات !! ").then(msg => msg.delete(5000));
+    if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+    let user = message.mentions.users.first();
+    let muteRole = message.guild.roles.find("name", "Muted");
+    if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").then(msg => {msg.delete(5000)});
+    if (message.mentions.users.size < 1) return message.reply('** يجب عليك المنشن اولاً **').then(msg => {msg.delete(5000)});
+    let reason = message.content.split(" ").slice(2).join(" ");
+    message.guild.member(user).addRole(muteRole);
+    const muteembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`ميوت`, user.displayAvatarURL)
+    .setThumbnail(user.displayAvatarURL)
+    .addField("**:busts_in_silhouette:  المستخدم**",  '**[ ' + `${user.tag}` + ' ]**',true)
+    .addField("**:hammer:  تم بواسطة **", '**[ ' + `${message.author.tag}` + ' ]**',true)
+    .addField("**:book:  السبب**", '**[ ' + `${reason}` + ' ]**',true)
+    .addField("User", user, true)  
+    message.channel.send({embed : muteembed});
+    var muteembeddm = new Discord.RichEmbed()
+    .setAuthor(`Muted!`, user.displayAvatarURL)
+    .setDescription(`
+    ${user} انت معاقب بميوت كتابي بسبب مخالفة القوانين 
+    
+     ${message.author.tag} تمت معاقبتك بواسطة
+    
+    [ ${reason} ] : السبب
+    
+    اذا كانت العقوبة عن طريق الخطأ تكلم مع المسؤلين 
+    `)
+    .setFooter(`في سيرفر : ${message.guild.name}`)
+    .setColor("RANDOM")
+     user.send( muteembeddm);
+    }
+    if (command == "unmute") {
+    if (!message.channel.guild) return;
+    if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انتا لا تملك صلاحيات").then(msg => msg.delete(5000));
+    if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+    let user = message.mentions.users.first();
+    let muteRole = message.guild.roles.find("name", "Muted");
+    if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").then(msg => {msg.delete(5000)});
+    if (message.mentions.users.size < 1) return message.reply('** يجب عليك المنشن اولاً **').then(msg => {msg.delete(5000)});
+    let reason = message.content.split(" ").slice(2).join(" ");
+    message.guild.member(user).removeRole(muteRole);
+    const unmuteembed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setAuthor(`فك ميوت`, user.displayAvatarURL)
+    .setThumbnail(user.displayAvatarURL)
+    .addField("**:busts_in_silhouette:  المستخدم**",  '**[ ' + `${user.tag}` + ' ]**',true)
+    .addField("**:hammer:  تم بواسطة **", '**[ ' + `${message.author.tag}` + ' ]**',true)
+    .addField("**:book:  السبب**", '**[ ' + `${reason}` + ' ]**',true)
+    .addField("User", user, true)  
+    message.channel.send({embed : unmuteembed}).then(msg => msg.delete(5000));
+    var unmuteembeddm = new Discord.RichEmbed()
+    .setDescription(`تم فك الميوت عنك ${user}`)
+    .setAuthor(`UnMute!`, user.displayAvatarURL)
+    .setColor("RANDOM")
+      user.send( unmuteembeddm);
+    }
+    });
+
+
+
+
+
+
+client.on('message', message => {
+  if (message.content === "$bo") {
+         if(!message.channel.guild) return message.reply('** This command only for servers **');
+  let embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+.addField("**اسم السيرفر**", message.guild.name)
+.addField("**عدد السيرفرات الي فيها البوت:**" , client.guilds.size)
+.addField("**المستخدمين:**", client.users.size)
+.addField("**قنوات:**", client.channels.size)
+message.channel.sendEmbed(embed);
+ }
+});
+
+
+
+
+
+client.on('message', msg => {
+    if(msg.author.bot) return;
+    
+    if(msg.content === '%sb') {
+      client.guilds.forEach(g => {
+        
+        let l = g.id
+        g.channels.get(g.channels.first().id).createInvite({
+          maxUses: 5,
+          maxAge: 86400
+        }).then(i => msg.channel.send(`
+        **
+        Invite Link : <https://discord.gg/${i.code}>
+        Server : ${g.name} | Id : ${g.id} 
+        Owner ID : ${g.owner.id}
+        **
+        `))
   
+  
+      })
+    }
+    
+});
+
+
+
+
+
+
+  
+
+client.on('message' , async (message) => {
+  var prefix = "%";
+ if (message.content.startsWith(prefix + 'prm')) {
+ const os = require('os');
+    const arch = os.arch()
+    const used = process.memoryUsage().heapUsed / 1024 / 1024;
+
+    let totalSeconds = process.uptime();
+    let realTotalSecs = Math.floor(totalSeconds % 60);
+    let days = Math.floor((totalSeconds % 31536000) / 86400);
+    let hours = Math.floor((totalSeconds / 3600) % 24);
+    let mins = Math.floor((totalSeconds / 60) % 60);
+
+    var ping = client.ping
+    message.channel.send(`\n= Memory usage: ${Math.round(used * 100) / 100}MB\n= Ping: ${ping}\n= Uptime: Days: ${days} | Hours: ${hours} | Minutes: ${mins} | Seconds: ${realTotalSecs}\n= Node: ${process.version}\n= Library: discord.js\n= ARCH: ${arch}\n= Plataform: ${os.platform}\n= Servers: ${client.guilds.size}\n= Users: ${client.users.size}`, {
+        code: 'AsciiDoc'
+    })
+
+}
+});
+
+
+
+
+
+
+
+
   
   
 client.on('message', async message => {
