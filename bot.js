@@ -277,7 +277,6 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
 
 
-
 client.on('message', message => {   
     if (message.author.boss) return;
     var prefix = "%";
