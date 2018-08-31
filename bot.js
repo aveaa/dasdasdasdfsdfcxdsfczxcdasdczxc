@@ -700,14 +700,6 @@ client.on('message',message =>{
 
 
 
-client.on('message', message=>{
-    if(message.content ===  prefix + 'leave') {
-        if (message.author.id !== "310129588397277185") return message.reply(' هذا الأمر قفط لصاحب البوت و شكراًً ')
-    message.guild.leave();
-            }
-});
-
-
  
 
  
