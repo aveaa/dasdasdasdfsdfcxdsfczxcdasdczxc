@@ -32,7 +32,7 @@ const fs = require('fs');
 
 const Client = new Discord.Client({disableEveryone: true});
 
-const prefix = "1";
+const prefix = "%";
 /////////////////////////
 ////////////////////////
 
