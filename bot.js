@@ -403,7 +403,7 @@ http://cutt.us/CJ_Bot
   client.on('message', message => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('%adminsbc')){
+if (message.content.startsWith('%bcadmins')){
 if(!message.author.id === 'bot_owner_id') return;
 message.channel.sendMessage('**جار ارسال الرسالة |✅**')
 client.users.forEach(m =>{
