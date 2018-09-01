@@ -298,18 +298,64 @@ function play(guild, song) {
 
 
 
+ client.on('message' , message => {
+
+    if (message.content === "%دعوه") {
+	    message.reply(`تم ارساله الرابط في الخاص`) 
+        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
+     const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ .setThumbnail(client.user.avatarURL)     
+ .setDescription("Add me" + `
+ **
+رابط البوت |
+http://cutt.us/CJ_Bot
+ **
+`);
+  message.author.sendEmbed(embed);
+   }
+});
+
+
+
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'موسيقى')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%play' ,'   :headphones:تشغيل الاغنيه باسم او برابط:headphones: ')
+      .addField('%stop' ,'    :mute: ايقاف الاغنيه:mute:   ')
+      .addField('%skip' ,'     :play_pause: تخطي الاغنيه :play_pause:  ')
+      .addField('%pause' ,'    :clock1: ايقاف الاغنيه مؤقت:clock1:  ')
+      .addField('%resume' ,'    :musical_note: تكملةالاغنيه:musical_note:  ')
+      .addField('%queue' ,'    :pencil: اظهار قائمة التشغيل :pencil:   ')
+      .addField('%np' ,'    :page_facing_up: اظهار الاغنية اللي انت مشغلها حاليا:page_facing_up:  ')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
 
 
 
 
 
 
+  client.on('message' , message => {
 
-
-
-
-
-
+    if (message.content === "%support") {
+	    message.reply(`تم ارساله الرابط في الخاص`)
+        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
+     const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ .setThumbnail(client.user.avatarURL)     
+ .setDescription(" ***welcome To server support*** " + `
+ **
+رابط السيرفر | https://discord.gg/QMk6frh
+ **
+`);
+  message.author.sendEmbed(embed);
+   }
+});
 
 
 
@@ -458,49 +504,7 @@ client.on('message', message => {
   });
 
 
-client.on('message', message => {
-                    var prefix = "%";
 
-           if (message.content.startsWith(prefix + "id")) {
-                     if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
-
-                message.guild.fetchInvites().then(invs => {
-      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
-      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-      var moment = require('moment');
-      var args = message.content.split(" ").slice(1);
-let user = message.mentions.users.first();
-var men = message.mentions.users.first();
- var heg;
- if(men) {
-     heg = men
- } else {
-     heg = message.author
- }
-var mentionned = message.mentions.members.first();
-  var h;
- if(mentionned) {
-     h = mentionned
- } else {
-     h = message.member
- }
-        moment.locale('ar-TN');
-      var id = new  Discord.RichEmbed()
-       
-    .setColor("#0a0909")
-    .setAuthor(message.author.username, message.author.avatarURL) 
-.addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
-.addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
-.addField(': عدد الدعوات', inviteCount,false)
-.setFooter("-")  
-    message.channel.sendEmbed(id);
-})
-}
-    
-
-         
-     });
 
 
 
@@ -738,7 +742,21 @@ client.on('message' , async (message) => {
 
 
 
-
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'العامه')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%دعوه' ,'يتم ارسال رساله لك في الخاص ويوجد بها رابط البوت')
+      .addField('%server' ,'يعطيك معلومات السيرفر')
+      .addField('%support' ,'رابط سيرفر الدعم الفني ')
+      .addField('%%bans' ,'يعطيك عدد الاشخاص الي مبندين في السيرفر ')
+      .addField('%صوره' ,'يعطيك صورت الشخص الي منشنتو')
+      .addField('%min' ,'يعطيك صوره سكن ماين كرافت يجب كتابة اسم الشخص ')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
 
 
 
@@ -833,9 +851,40 @@ client.on("message", (message) => {
 });
 
 
+
+
+
+client.on("guildMemberAdd", member => {
+let welcomer = member.guild.channels.find("name","welcome");
+      if(!welcomer) return;
+      if(welcomer) {
+         moment.locale('ar-ly');
+         var h = member.user;
+        let norelden = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(h.avatarURL)
+        .setAuthor(h.username,h.avatarURL)
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+     welcomer.send({embed:norelden});          
+               
+ 
+      }
+      });
+
+
+
+
+
+
+
+
+
+
 client.on('message', message => {
      if (message.author.bot) return;
-    if (message.content.startsWith("رابط")) {
+    if (message.content.startsWith("%رابط")) {
         message.channel.createInvite({
         thing: true,
         maxUses: 100,
@@ -916,6 +965,7 @@ client.on('message',message =>{
       let embed = new Discord.RichEmbed()
       .addField('%العامه' ,'     :earth_americas:  للحصول على قائمة  العامة :earth_americas: ')
       .addField('%الاداره' ,'     :crown:   للحصول على قائمة  الاداره :crown:  ')
+      .addField('%موسيقى' ,'     :musical_note:   للحصول على قائمة  الموسيقى :musical_note:  ')
       .setColor('RANDOM')
       .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
       message.channel.send(embed)
