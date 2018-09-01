@@ -1,4 +1,18 @@
 const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+
+
+const Discord = require('discord.js');
 
 const Util = require('discord.js');
 
@@ -16,9 +30,11 @@ const ytdl = require('ytdl-core');
 
 const fs = require('fs');
 
+const gif = require("gif-search");
+
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "%";
+const prefix = "1";
 /////////////////////////
 ////////////////////////
 
@@ -64,7 +80,7 @@ client.on('message', async msg => {
     const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
     
-	const url = args[1] ? args[1].replace(/<(.+)>/g, '$%') : '';
+	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
@@ -281,6 +297,7 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
+
 
 
 
