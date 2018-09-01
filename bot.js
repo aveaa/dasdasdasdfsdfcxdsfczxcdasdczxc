@@ -340,6 +340,36 @@ http://cutt.us/CJ_Bot
 
 
 
+        client.on('ready', function(){
+          var ms = 10000 ;
+          var setGame = ['%help','%دعوه','%help','%دعوه','%help'];
+          var i = -1;
+          var j = 0;
+          setInterval(function (){
+              if( i == -1 ){
+                  j = 1;
+              }
+              if( i == (setGame.length)-1 ){
+                  j = -1;
+              }
+              i = i+j;
+              client.user.setGame(setGame[i],`https://www.twitch.tv/jokar_999`);
+          }, ms);
+      
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
   client.on('message' , message => {
 
     if (message.content === "%support") {
@@ -749,7 +779,7 @@ client.on('message' , async (message) => {
       .addField('%دعوه' ,'يتم ارسال رساله لك في الخاص ويوجد بها رابط البوت')
       .addField('%server' ,'يعطيك معلومات السيرفر')
       .addField('%support' ,'رابط سيرفر الدعم الفني ')
-      .addField('%%bans' ,'يعطيك عدد الاشخاص الي مبندين في السيرفر ')
+      .addField('%bans' ,'يعطيك عدد الاشخاص الي مبندين في السيرفر ')
       .addField('%صوره' ,'يعطيك صورت الشخص الي منشنتو')
       .addField('%min' ,'يعطيك صوره سكن ماين كرافت يجب كتابة اسم الشخص ')
       .setColor('RANDOM')
