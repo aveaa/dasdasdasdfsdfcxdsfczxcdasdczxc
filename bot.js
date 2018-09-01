@@ -12,7 +12,7 @@ client.on('message', msg => {
 });
 
 
-const Discord = require('discord.js');
+const discord = require('discord.js');
 
 const Util = require('discord.js');
 
@@ -30,9 +30,7 @@ const ytdl = require('ytdl-core');
 
 const fs = require('fs');
 
-const gif = require("gif-search");
-
-const client = new Discord.Client({disableEveryone: true});
+const Client = new Discord.Client({disableEveryone: true});
 
 const prefix = "1";
 /////////////////////////
@@ -297,6 +295,17 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
