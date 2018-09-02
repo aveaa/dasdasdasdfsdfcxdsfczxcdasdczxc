@@ -400,17 +400,7 @@ http://cutt.us/CJ_Bot
 
 
 
-  client.on('message', message => {
-    if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('%bcadmins')){
-if(!message.author.id === 'bot_owner_id') return;
-message.channel.sendMessage('**جار ارسال الرسالة |✅**')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
+
 
 
 
@@ -868,24 +858,6 @@ client.on("message", (message) => {
 
 
 
-client.on("guildMemberAdd", member => {
-let welcomer = member.guild.channels.find("name","welcome");
-      if(!welcomer) return;
-      if(welcomer) {
-         moment.locale('ar-ly');
-         var h = member.user;
-        let norelden = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(h.avatarURL)
-        .setAuthor(h.username,h.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
-         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
-     welcomer.send({embed:norelden});          
-               
- 
-      }
-      });
 
 
 
