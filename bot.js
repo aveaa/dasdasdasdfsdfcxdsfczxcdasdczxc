@@ -1085,9 +1085,9 @@ client.on('guildDelete', guild => {
      .setURL('https://discordapp.com/oauth2/authorize?client_id=483741660480667668&scope=bot&permissions=21469585838')
   .setDescription(`**
   Server Kicked CJ Bot :cry:
-اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}
-عدد اعضاء السيرفر: ${guild.memberCount}**`);
+Server Name: ${guild.name}
+Server Owner: ${guild.owner}
+Count: ${guild.memberCount}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
 
