@@ -1078,7 +1078,7 @@ client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("GOLD")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=483741660480667668&scope=bot&permissions=21469585838')
   .setDescription(`**
   Server Kicked Speed Bot :cry:
 اسم السيرفر: ${guild.name}
