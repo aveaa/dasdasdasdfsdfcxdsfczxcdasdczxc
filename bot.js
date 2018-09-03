@@ -1075,7 +1075,6 @@ client.on('guildCreate', guild => {
 Server Name: ${guild.name}
 Server Owner: ${guild.owner}
 Server ID: ${guild.id}
-Invite Link : <https://discord.gg/${i.code}>
 Count: ${guild.memberCount}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
@@ -1090,7 +1089,6 @@ client.on('guildDelete', guild => {
 Server Name: ${guild.name}
 Server Owner: ${guild.owner}
 Server ID: ${guild.id}
-Invite Link : <https://discord.gg/${i.code}>
 Count: ${guild.memberCount}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
