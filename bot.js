@@ -3,7 +3,6 @@ const client = new Discord.Client();
 const UserBlocked = new Set(); 
 const pretty = require('pretty-ms')
 ,ti={};
-,spee={};
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
