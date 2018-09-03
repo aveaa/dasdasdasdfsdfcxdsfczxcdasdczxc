@@ -1071,10 +1071,10 @@ client.on('guildCreate', guild => {
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/oauth2/authorize?client_id=483741660480667668&scope=bot&permissions=21469585838')
   .setDescription(`**
-  New Server Add Speed Bot ✅
+  New Server Add CJ Bot ✅
 اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-عدد الاعضاء: ${msg.guild.memberCount}
+صاحب السيرفر: ${guild.owner}
+عدد اعضاء السيرفر: ${guild.memberCount}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
 
@@ -1084,10 +1084,10 @@ client.on('guildDelete', guild => {
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/oauth2/authorize?client_id=483741660480667668&scope=bot&permissions=21469585838')
   .setDescription(`**
-  Server Kicked Speed Bot :cry:
+  Server Kicked CJ Bot :cry:
 اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-عدد الاعضاء: ${msg.guild.memberCount}
+صاحب السيرفر: ${guild.owner}
+عدد اعضاء السيرفر: ${guild.memberCount}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
 
