@@ -1078,7 +1078,7 @@ client.on('guildCreate', guild => {
 Server Name: ${guild.name}
 Server Owner: ${guild.owner}
 Server ID: ${guild.id}
-Count: ${guild.memberCount}**`);
+Count: ${guild.memberCount}
 Invite Link : <https://discord.gg/${i.code}>**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
@@ -1096,7 +1096,6 @@ Server ID: ${guild.id}
 Count: ${guild.memberCount}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
-
 
 
 
