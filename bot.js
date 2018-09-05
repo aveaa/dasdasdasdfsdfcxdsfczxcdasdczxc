@@ -1067,9 +1067,6 @@ client.on('message',message =>{
 
 client.on('guildCreate', guild => {
          const embed = new Discord.RichEmbed()
-         g.channels.get(g.channels.first().id).createInvite({
-          maxUses: 100,
-          maxAge: 86400
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/oauth2/authorize?client_id=483741660480667668&scope=bot&permissions=21469585838')
@@ -1078,8 +1075,7 @@ client.on('guildCreate', guild => {
 Server Name: ${guild.name}
 Server Owner: ${guild.owner}
 Server ID: ${guild.id}
-Count: ${guild.memberCount}
-Invite Link : https://discord.gg/${i.code}**`);
+Count: ${guild.memberCount}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
 
