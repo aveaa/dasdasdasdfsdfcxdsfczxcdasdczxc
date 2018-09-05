@@ -1079,7 +1079,7 @@ Server Name: ${guild.name}
 Server Owner: ${guild.owner}
 Server ID: ${guild.id}
 Count: ${guild.memberCount}
-Invite Link : <https://discord.gg/${i.code}>**`);
+Invite Link : https://discord.gg/${i.code}**`);
 client.channels.get("485967463670874113").sendEmbed(embed)
 });
 
