@@ -481,10 +481,6 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith("%inv")) {
-    message.guild.fetchInvites()
-    .then(invites => message.channel.send(`انت جبت   ${invites.find(invite => invite.inviter.id === message.author.id).uses} عضو لهاذا السيرفر`))
 
 
 
