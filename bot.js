@@ -347,7 +347,33 @@ http://cutt.us/CJ_Bot
 
 
 
+    client.on('guildMemberAdd', member => {
+      var embed = new Discord.RichEmbed()
+      .setAuthor(member.user.username, member.user.avatarURL)
+      .setThumbnail(member.user.avatarURL)
+      .setTitle(`عضو جديد`)
+      .setDescription(`اهلا بك في السيرفر`)
+      .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
+      .setColor('GREEN')
+  
+  var channel =member.guild.channels.find('name', 'welcome')
+  if (!channel) return;
+  channel.send({embed : embed});
+  });
 
+    client.on('guildMemberAdd', member => {
+      var embed = new Discord.RichEmbed()
+      .setAuthor(member.user.username, member.user.avatarURL)
+      .setThumbnail(member.user.avatarURL)
+      .setTitle(`عضو جديد`)
+      .setDescription(`اهلا بك في السيرفر`)
+      .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
+      .setColor('GREEN')
+  
+  var channel =member.guild.channels.find('name', 'الترحيب')
+  if (!channel) return;
+  channel.send({embed : embed});
+  });
 
 
 
@@ -429,25 +455,6 @@ m.sendMessage(args)
 
 
 
-
-
-
-
-
-
-    client.on('guildMemberAdd', member => {
-      var embed = new Discord.RichEmbed()
-      .setAuthor(member.user.username, member.user.avatarURL)
-      .setThumbnail(member.user.avatarURL)
-      .setTitle(`عضو جديد`)
-      .setDescription(`اهلا بك في السيرفر`)
-      .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-      .setColor('GREEN')
-  
-  var channel =member.guild.channels.find('name', 'welcome')
-  if (!channel) return;
-  channel.send({embed : embed});
-  });
 
 
 
