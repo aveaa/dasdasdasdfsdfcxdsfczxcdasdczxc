@@ -409,19 +409,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-    client.on('guildMemberAdd', member => {
-      var embed = new Discord.RichEmbed()
-      .setAuthor(member.user.username, member.user.avatarURL)
-      .setThumbnail(member.user.avatarURL)
-      .setTitle(`عضو جديد`)
-      .setDescription(`اهلا بك في السيرفر`)
-      .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-      .setColor('GREEN')
-  
-  var channel =member.guild.channels.find('name', 'ألتہرحہيہبہ')
-  if (!channel) return;
-  channel.send({embed : embed});
-  });
+
 
 
 
