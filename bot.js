@@ -346,7 +346,7 @@ http://cutt.us/CJ_Bot
 
 client.on('message', message => {
            const embed = new Discord.RichEmbed()
-     if (message.content === "%معلومات") {
+     if (message.content === "%المعلومات") {
        message.reply(`تم ارسال المعلومات في الخاص :white_check_mark:`) 
 message.author.send("CJ Bot" + `  **
      معلومات عن مطور البوت  
@@ -877,7 +877,7 @@ client.on('message' , async (message) => {
       .addField('%bans' ,'يعطيك عدد الاشخاص الي مبندين في السيرفر ')
       .addField('%صوره' ,'يعطيك صورت الشخص الي منشنتو')
       .addField('%min' ,'يعطيك صوره سكن ماين كرافت يجب كتابة اسم الشخص ')
-      .addField('%معلومات' ,'يعطيك معلومات عن البوت ')
+      .addField('%المعلومات' ,'يعطيك معلومات عن البوت ')
       .setColor('RANDOM')
       .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
       message.channel.send(embed)
