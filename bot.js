@@ -362,14 +362,13 @@ http://cutt.us/CJ_Bot
       .setTitle(`عضو جديد`)
       .setDescription(`اهلا بك في السيرفر`)
       .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true) 
       .setColor('GREEN')
   
   var channel =member.guild.channels.find('name', 'welcome')
   if (!channel) return;
   channel.send({embed : embed});
   });
+
 
 
 
