@@ -481,6 +481,10 @@ client.on('guildMemberAdd', member => {
 
 
 
+client.on('message', message => {
+    if (message.content.startsWith("%inv")) {
+    message.guild.fetchInvites()
+    .then(invites => message.channel.send(`انت جبت   ${invites.find(invite => invite.inviter.id === message.author.id).uses} عضو لهاذا السيرفر`))
 
 
 
@@ -491,8 +495,22 @@ client.on('guildMemberAdd', member => {
 
 
 
-
-
+        client.on('message', message => {
+          var prefix = '%';
+          if (message.content.startsWith(prefix + 'العاب')) {
+      let embed = new Discord.RichEmbed()
+      .addField('%عقاب' ,'لعبة العقاب')
+      .addField('%حكم' ,'لعبة الحكم')
+      .addField('%مريم' ,'لعبة مريم')
+      .addField('%فكك' ,'لعبه فكك يعطيك كلمات لازم تعملها تفكيك')
+      .addField('%لو خيروك' ,'لعبة لو خيروك')
+      .addField('%خواطر' ,'لعبة خواطر')
+      .addField('%اسئلني' ,'لعبه اسئلني يعطيك سؤال يجيب عليك الجواب عليه خلال دقيقه')
+      .setColor('RANDOM')
+      .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
+      message.channel.send(embed)
+      }
+  });
 
 
 
