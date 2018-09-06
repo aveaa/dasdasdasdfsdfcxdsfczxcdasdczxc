@@ -363,8 +363,6 @@ http://cutt.us/CJ_Bot
       .setDescription(`اهلا بك في السيرفر`)
       .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
           .setAuthor(h.username,h.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)   
       .setColor('GREEN')
   
   var channel =member.guild.channels.find('name', 'welcome')
@@ -372,22 +370,7 @@ http://cutt.us/CJ_Bot
   channel.send({embed : embed});
   });
 
-    client.on('guildMemberAdd', member => {
-      var embed = new Discord.RichEmbed()
-      .setAuthor(member.user.username, member.user.avatarURL)
-      .setThumbnail(member.user.avatarURL)
-      .setTitle(`عضو جديد`)
-      .setDescription(`اهلا بك في السيرفر`)
-      .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-          .setAuthor(h.username,h.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)   
-      .setColor('GREEN')
-  
-  var channel =member.guild.channels.find('name', 'ألتہرحہيہبہ')
-  if (!channel) return;
-  channel.send({embed : embed});
-  });
+
 
 
 
