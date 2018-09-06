@@ -442,28 +442,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.on('message', message => {
-if (message.content.startsWith('$صور')) {
-    fetch.get('http://www.splashbase.co/api/v1/images/random').then(photo => {
 
-        const embed = new Discord.RichEmbed()
-
-    .setImage(`${photo.body.url}`);
-
-        message.channel.send({embed})
-
-    }).catch(err => {
-
-        if (err) {
-
-            message.channel.send('OOPS... something went wrong');
-
-        }
-
-    });
-
-};
- });
 
 
 
