@@ -442,11 +442,8 @@ client.on('guildMemberAdd', member => {
 
 
 
-
-
-
 client.on('message', message => {
-if (message.content.startsWith('%صور')) {
+if (message.content.startsWith('$صور')) {
     fetch.get('http://www.splashbase.co/api/v1/images/random').then(photo => {
 
         const embed = new Discord.RichEmbed()
@@ -467,6 +464,9 @@ if (message.content.startsWith('%صور')) {
 
 };
  });
+
+
+
 
 
 
