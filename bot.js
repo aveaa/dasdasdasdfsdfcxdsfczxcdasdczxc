@@ -1092,7 +1092,7 @@ client.on('message',message =>{
       .addField('%mute' ,':zipper_mouth:لعمل ميوت لشخص يجيب عليك عمل رتبت Muted :zipper_mouth:')
       .addField('%unmute' ,':grinning:يتم فك الميوت عن الشخص يجيب عليك منشنته:grinning:')
       .addField('welcome' ,':wave:حتى البوت يرحب في الاشخاص يجيب عليك عمل شات باسمwelcome:wave:')
-      .addField('%kick' ,':incoming_envelope: رسالة جماعية الى كل اعضاء السيرفرالكود مميز يعطيك تنشر في امبد او عادي:incoming_envelope: ')
+      .addField('%kick' ,':incoming_envelope: رسالة جماعية الى كل اعضاء السيرفر:incoming_envelope: ')
       .addField('%bc' ,'')
       .setColor('RANDOM')
       .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
