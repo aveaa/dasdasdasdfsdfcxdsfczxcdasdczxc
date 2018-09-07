@@ -1792,7 +1792,7 @@ function forEachObject(obj, func) {
 }
 //Tropy server codes
 client.on('guildMemberAdd', member => {
-	let welcomer = member.guild.channels.find("name","chat");
+	let welcomer = member.guild.channels.find("name","✉-ا̍ڷــڜــٰا̍ټ");
       if(!welcomer) return;
       if(welcomer) {
          moment.locale('ar-ly');
