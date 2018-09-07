@@ -1767,7 +1767,6 @@ console.log('[38ab] Send By: ' + message.author.username)
 
 
 const moment = require('moment')
-const fs = require("fs")
 var dat = JSON.parse("{}");
 function forEachObject(obj, func) {
     Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
