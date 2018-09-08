@@ -1797,7 +1797,8 @@ client.on('guildMemberAdd', member => {
         let norelden = new Discord.RichEmbed()
         .setColor('#070000')
         .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)    
+	               .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
      welcomer.send({embed:norelden});          
                
  
