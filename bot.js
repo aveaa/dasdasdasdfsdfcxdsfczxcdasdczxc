@@ -1861,9 +1861,7 @@ const w = ['./m.png'];
       let user = Invite.inviter;
       let invites = invs.filter(i => i.inviter.id === user.id);
       let inviteCount = invites.reduce((p, v) => v.uses + p, 0);
-
  channel.send(`**Invited By** : **${Invite.inviter} (${inviteCount})**`);
- channel.send(`**WELCOME TO CJ Bot Support**:star: `);
 
 })
 }
