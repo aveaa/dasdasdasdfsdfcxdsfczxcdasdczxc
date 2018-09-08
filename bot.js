@@ -372,6 +372,27 @@ message.author.send("CJ Bot" + `  **
 
 
 
+  client.on('guildMemberAdd', member => {
+        let channel = member.guild.channels.find('name', 'welcome');
+        let memberavatar = member.user.avatarURL
+          if (!channel) return;
+        let embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setThumbnail(memberavatar)
+            .addField('🎽 | name :  ',`${member}`)
+            .addField('📢 | نورت السيرفر يا قلبي' , `Welcome to the server, ${member}`)
+            .addField('🆔 | user :', "**[" + `${member.id}` + "]**" )
+                    .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
+                   
+                      .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                         
+                                         .addField(' الـسيرفر', `${member.guild.name}`,true)
+                                           
+         .setFooter(`${member.guild.name}`)
+            .setTimestamp()
+       
+          channel.sendEmbed(embed);
+        });
 
 
 
@@ -379,8 +400,27 @@ message.author.send("CJ Bot" + `  **
 
 
 
-
-
+  client.on('guildMemberAdd', member => {
+        let channel = member.guild.channels.find('name', 'ألتہرحہيہبہ');
+        let memberavatar = member.user.avatarURL
+          if (!channel) return;
+        let embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setThumbnail(memberavatar)
+            .addField('🎽 | name :  ',`${member}`)
+            .addField('📢 | نورت السيرفر يا قلبي' , `Welcome to the server, ${member}`)
+            .addField('🆔 | user :', "**[" + `${member.id}` + "]**" )
+                    .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
+                   
+                      .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                         
+                                         .addField(' الـسيرفر', `${member.guild.name}`,true)
+                                           
+         .setFooter(`${member.guild.name}`)
+            .setTimestamp()
+       
+          channel.sendEmbed(embed);
+        });
 
 
 
@@ -1027,6 +1067,7 @@ client.on('message',message =>{
       .addField('%العامه' ,'     :earth_americas:  للحصول على قائمة  العامة :earth_americas: ')
       .addField('%الاداره' ,'     :crown:   للحصول على قائمة  الاداره :crown:  ')
       .addField('%موسيقى' ,'     :musical_note:   للحصول على قائمة  الموسيقى :musical_note:  ')
+      .addField('%العاب' ,'     :video_game: للحصول على قائمة الالعاب :video_game: ')
       .setColor('RANDOM')
       .setTitle('═════ஜ۩۞۩ஜ══════════ஜ۩۞۩ஜ═════')
       message.channel.send(embed)
