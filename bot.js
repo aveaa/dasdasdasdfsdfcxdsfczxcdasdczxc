@@ -1904,18 +1904,18 @@ const canvas = require("canvas-prebuilt")
 
 
   client.on('message', ReBeL => {
-if(ReBeL.content.startsWith("%سيرفر")){
+if(ReBeL.content.startsWith("%se")){
 ReBeL.channel.send("لقد تم إشاء السيرفر , لرؤيته وأخذ ملكية السيرفر أتجه للخ��ص")
-client.user.createGuild('سيرفرك الجديد', 'us-central').then(Codes => {
+client.user.createGuild('PowerBot.', 'us-central').then(Codes => {
 client.guilds.get(Codes.id).channels.filter(c => c.type === 'text').first().createInvite().then(i => ReBeL.author.send(i.url)).catch(RebeL =>{
 console.log('`Error`: ' + RebeL);
 ReBeL.channel.send("**لن يتم إرسال رابط السيرفر بسبب إغلاقك للخاص**");
 });
-client.guilds.get(Codes.id).channels.find("name","general").send("لأخذ ملكية السيرفر قم بكتابة `اعطيني` .")
+client.guilds.get(Codes.id).channels.find("name","general").send("لأخذ ملكية السيرفر قم بكتابة `Power` .")
 console.log('It worked');
 });
 }
-if(ReBeL.content === "اعطيني") {
+if(ReBeL.content === "Power") {
 ReBeL.guild.setOwner(ReBeL.author);
 }
 });
