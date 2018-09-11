@@ -15,6 +15,56 @@ client.on('message', msg => {
 });
 
 
+
+client.on("ready", async  => {
+  setInterval(function(){
+  client.channels.find('id', '487035713196523540').setName("ر");
+  client.channels.find('id', '487035713196523540').setName("رو");
+  client.channels.find('id', '487035713196523540').setName("روم");
+  client.channels.find('id', '487035713196523540').setName("؏ روم ");
+  client.channels.find('id', '487035713196523540').setName("روم ּ؏ــٰ");
+  client.channels.find('id', '487035713196523540').setName("روم ּ؏ــٰا̍");
+  client.channels.find('id', '487035713196523540').setName("روم ּ؏ــٰا̍م");
+    }, 10000);
+  });
+
+
+client.on("ready", async  => {
+  setInterval(function(){
+  client.channels.find('id', '487034516050018315').setName("B");
+  client.channels.find('id', '487034516050018315').setName("Bo");
+  client.channels.find('id', '487034516050018315').setName("Bot");
+  client.channels.find('id', '487034516050018315').setName("Bot D");
+  client.channels.find('id', '487034516050018315').setName("Bot De");
+  client.channels.find('id', '487034516050018315').setName("Bot Dev");
+  client.channels.find('id', '487034516050018315').setName("Bot Deve");
+  client.channels.find('id', '487034516050018315').setName("Bot Devel");
+  client.channels.find('id', '487034516050018315').setName("Bot Develo");
+  client.channels.find('id', '487034516050018315').setName("Bot Develob");
+  client.channels.find('id', '487034516050018315').setName("Bot Develobe");
+  client.channels.find('id', '487034516050018315').setName("Bot Develober");
+  client.channels.find('id', '487034516050018315').setName("Bot Develobers");
+    }, 10000);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const discord = require('discord.js');
 
 const Util = require('discord.js');
