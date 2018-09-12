@@ -2041,7 +2041,14 @@ client.on('message', message => {
 
 
 
-
+client.on('message', message => {
+           const embed = new Discord.RichEmbed()
+     if (message.content === "%csc") {
+message.channel.send("@everyone" + `  **
+هنا تكت اي اقتراح او اي تغير تريده يصير في البوت اي شخص يكتب غير الاقتراحات رح يجيه ميوت
+**`);
+    }
+}); 
 
 
 
