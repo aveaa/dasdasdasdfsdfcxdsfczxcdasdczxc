@@ -2045,18 +2045,25 @@ client.on('message', message => {
            const embed = new Discord.RichEmbed()
      if (message.content === "%csc") {
 message.channel.send("@everyone" + `  **
-هنا تكتب اي اقتراح للبوت
-اذا تريد مثلا نضيف شي في البوت
-او تريد نعدل على شي 
-اذا كان في اي شي مش عاجبكم في البوت قولولنا ان شاء الله بنغيرو
-اي شخص يكتب هنا غير اقتراحات للبوت رح يجيه ميوت 
+هنا كل شي يصير داخل البوت يكون موجود هنا 
+مثلا 
+اضافة اوامر او تغير اوامر معين او ازالة اوامر
 **`);
     }
 }); 
 
 
 
-
+client.on('message', message => {
+           const embed = new Discord.RichEmbed()
+     if (message.content === "%cs") {
+message.channel.send("@everyone" + `  **
+هنا نشرح كل امر ينضاف جديد 
+اذا كان في اي امر مش عارفين تستخدموه اكتبو في روم الاقتراحات 
+ان شاء الله رح نشرح عنو
+**`);
+    }
+}); 
 
 
 
