@@ -67,7 +67,7 @@ j = 1;
             j = -1;	
       }	
        i = i+j;	
-              client.user.setGame(setGame[i],`https://www.twitch.tv/gg`);
+              client.user.setGame(setGame[i],`https://www.twitch.tv/jokar999`);
 }, ms);	
 	
 });
